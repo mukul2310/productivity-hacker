@@ -1,0 +1,22 @@
+function quote()
+{
+    $.ajax(
+        {
+            method:"GET",
+            url:"http://api.quotable.io/random",
+            success:function(response)
+            {
+                $("#quote").empty().append(response.content+"<br>");
+                $("#author").empty().append('-'+response.author);
+            }
+        }
+    )
+}
+$()
+{
+    quote();
+    $("#refresh").on("click",()=>
+    {
+        quote();
+    })
+}
