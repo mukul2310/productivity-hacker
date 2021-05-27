@@ -6,3 +6,8 @@ body
     min-height: 180 px;
     font-size: medium;
 }
+
+.todo{
+    width: 200px;
+    height: 30pxs;
+}

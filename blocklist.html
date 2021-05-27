@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivity Tool</title>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script defer src="ajax.js"></script>
+    <script defer src="list.js"></script>
+</head>
+
+<body>
+    <div>
+        <h2>To Do List</h2>
+        <form class="col s12">
+            <div class="container-fluid">
+                <div class="mb-3">
+                    <label id="id" class="col-form-label">Title</label>
+                    <input placeholder="daal dum h toh" class="form-control" type="text" id="id">
+                </div>
+                <div class="mb-3">
+                    <label id="desc" class="col-form-label">DEsc</label>
+                    <input placeholder="daal dum h toh" class="form-control" type="text" id="desc">
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-outline-primary" id="addtodo" class="todo" onclick="addTodo()">ADD</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div >
+        <ul id="itemlist">
+            <li>First todo</li>
+            <li>Second todo</li>
+            <li>Third todo</li>
+            <li>Fourth todo</li>
+            <li>Fifth todo</li>
+        </ul>
+    </div>  
+</body>
