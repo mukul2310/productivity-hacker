@@ -14,25 +14,42 @@
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div>
-            <div class="">
-                <h2 style="text-align: center;">To Do List</h2>
-            </div>
-            <!-- <form class="col s12"> -->
-                <div class="container-fluid">
-                    <div class="mb-3">
-                        <input placeholder="Title" class="form-control" type="text" id="todoTitle" required>
-                        <input placeholder="Descripsion" class="form-control" type="text" id="todoDesc">
-                        <button class="btn btn-outline-primary form-control" id="addtodo" onclick="add()">ADD</button>
-                    </div>
-                </div>
-            <!-- </form> -->
+  <div class="container-fluid">
+    <!-- Title and text boxes -->
+    <div>
+        <div class="">
+            <h2 style="text-align: center;">To Do List</h2>
         </div>
-        <div >
-            <ol id="itemlist" class="list-group list-group-numbered">
-              </ol>
+        <div class="container">
+            <div class="mb-3">
+              <form>
+                <input placeholder="Title" class="form-control" type="text" id="todoTitle" required>
+                <input placeholder="Descripsion" class="form-control" type="text" id="todoDesc">
+                <button class="btn btn-outline-primary form-control" id="addtodo" onclick="add()">ADD</button>
+              </form>
+            </div>
         </div>
     </div>
+
+    <!-- Segment Containing List of tasks -->
+    <div >
+        <ol id="itemlist" class="list-group list-group-numbered">
+        </ol>
+    </div>
+
+    <!-- Tasks Remaining and baack button -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            Tasks Left : <span id="remTasks">0</span>
+          </li>
+          <li class="nav-item active right">
+            <span><button class="btn btn-outline-success my-2 my-sm-0" onclick="location.href = 'popup.html'">Back</a></span>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+  </div>
 </body>
 </html>

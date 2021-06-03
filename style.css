@@ -11,3 +11,15 @@ body
     width: 200px;
     height: 30pxs;
 }
+
+.container-fluid{
+    border: 2px solid #113449;
+}
+
+.badge{
+    color: blue;
+}
+.done{
+    color: #f21f1f;
+}
+

@@ -1,52 +1,35 @@
-var list=
-[
-    {
-        title:"title",
-        desc:"desc"
-    },
-    {
-        title:"title",
-        desc:"desc"
-    },
-    {
-        title:"title",
-        desc:"desc"
-    }
-]
-for(i in list)
-    {
-        $("#itemlist").append(`<li class="list-group-item d-flex justify-content-between align-items-start">
-        <div class="ms-2 me-auto">
-          <div class="fw-bold">${list[i].title}</div>
-          ${list[i].desc}
-        </div>
-        <span class="badge bg-primary rounded-pill">14</span>
-      </li>`)
-    }
-  function add()
-  {
-  var inputTitle = $("#todoTitle").val();
+var list = [];
+
+function add()
+{
+    console.log($('#itemlist'));
+    var inputTitle = $("#todoTitle").val();
     var inputDesc = $("#todoDesc").val();
     console.log(inputTitle);
     console.log(inputDesc);
-    if(inputTitle!=""){
-        const obj=
-        {
-            title:inputTitle,
-            desc:inputDesc
-        }
-        list.push(obj)
-        console.log(list);
-
+    const obj = {
+        title : inputTitle,
+        desc: inputDesc
     }
-    for(i in list)
-    {
+    if(inputTitle!=""){
+        list.push(obj);
         $("#itemlist").append(`<li class="list-group-item d-flex justify-content-between align-items-start">
         <div class="ms-2 me-auto">
-          <div class="fw-bold">${list[i].title}</div>
-          ${list[i].desc}
+            <div class="fw-bold">${inputTitle}</div>
+            ${inputDesc}
         </div>
-        <span class="badge bg-primary rounded-pill">14</span>
-      </li>`)
+        <a class="badge material-icons" onclick="doneTodo()" href="javascript:void(0)">check</a>
+        <a class="badge done material-icons" onclick="removeTodo()" href="javascript:void(0)">clear</a>
+        </li>`)
     }
-  }
+
+    $('#remTasks').html(list.length);
+}
+
+function doneTodo(){
+
+}
+
+function removeTodo(){
+
+}
