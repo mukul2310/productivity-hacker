@@ -1,7 +1,8 @@
 var list = [];
 
-function add()
+$("#todo").on("submit",(e)=>
 {
+    e.preventDefault();
     console.log($('#itemlist'));
     var inputTitle = $("#todoTitle").val();
     var inputDesc = $("#todoDesc").val();
@@ -22,9 +23,9 @@ function add()
         <a class="badge done material-icons" onclick="removeTodo()" href="javascript:void(0)">clear</a>
         </li>`)
     }
-
+    
     $('#remTasks').html(list.length);
-}
+})
 
 function doneTodo(){
 
