@@ -28,7 +28,8 @@ $("#todo").on("submit",(e)=>
 })
 
 function doneTodo(){
-
+    console.log($('ol li a').closest('li'));
+    $('ol li a').closest('li').addClass('completed');
 }
 
 function removeTodo(){

@@ -23,3 +23,7 @@ body
     color: #f21f1f;
 }
 
+.completed{
+    text-decoration: line-through;
+    color: darkgray;
+}
