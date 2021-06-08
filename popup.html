@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script defer src="ajax.js"></script>
+    <script defer src="time.js"></script>
 </head>
 <body>
     <div class="container container-fluid">
@@ -26,7 +27,7 @@
         </div>
         <!-- Block list -->
         <div class="p-1 m-1">
-            <button class="btn btn-outline-primary">Add site to blocklist</button>
+            <a href = 'blocklist.html' class="btn btn-outline-primary">Add site to blocklist</a>
         </div>
         <!-- Analysis -->
         <div class="p-1 m-1">
@@ -37,7 +38,25 @@
         </div>
         <!-- Start timer -->
         <div class="p-1 m-1">
-            <button class="btn btn-outline-primary">Start Timer</button>
+            <h4>Timers</h4>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="pomodoro">
+                <label class="form-check-label" for="pomodoro">Pomodoro (25min focus,5min break)</label>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="custom">
+                <label class="form-check-label" for="custom">Custom time</label>
+                <div class="form-control" hidden>
+                    <input class="input-group-sm" id="custom_focus" placeholder="Custom focus time"></input>
+                    <input class="input-group-sm" id="custom_break" placeholder="Custom break time"></input>
+                </div>
+            </div>
+            <!-- <div>
+                Time:
+            </div> -->
+            <a class="btn btn-outline-primary border-0 p-0 m-0" onclick="startTimer()" href="javascript:void(0)"><i class="material-icons">play_arrow</i></a>
+            <a class="btn btn-outline-primary border-0 p-0 m-0" onclick="pauseTimer()" href="javascript:void(0)"><i class="material-icons">pause</i></a>
+            <a class="btn btn-outline-primary border-0 p-0 m-0" onclick="stopTimer()" href="javascript:void(0)"><i class="material-icons">stop</i></a>
         </div>
     </div>
 </body>

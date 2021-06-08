@@ -10,21 +10,41 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script defer src="ajax.js"></script>
-    <script defer src="list.js"></script>
+    <script defer src="block.js"></script>
 </head>
 
 <body>
-    <form id="block">
-        <input placeholder="Title" class="form-control" type="text" id="todoTitle" required>
-        <input placeholder="Description" class="form-control" type="text" id="todoDesc">
-        <button class="btn btn-outline-primary form-control" type="submit" id="addtodo">ADD</button>
-    </form>
+  <div class="container-fluid">
+    <!-- Title and text boxes -->
+    <div>
+        <div class="">
+            <h2 style="text-align: center;">Blocklist List</h2>
+        </div>
+        <div class="container">
+            <div class="mb-3">
+              <form id="block">
+                <input placeholder="https://www.google.com" class="form-control" type="url" inputmode="url" id="blocked_url" required>
+                <button class="btn btn-outline-danger form-control" id="addBlock">Block</button>
+              </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Segment Containing List of tasks -->
+    <div >
+        <ol id="blocklist" class="list-group list-group-numbered">
+        </ol>
+    </div>
+
+    <!-- Tasks Remaining and baack button -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <ul class="navbar-nav">
+          <li class="nav-item active right">
+            <span><a class="btn btn-outline-success my-2 my-sm-0" href = 'popup.html'>Back</a></span>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
 </body>
-<script>
-    $("#block").on("submit",(e)=>
-    {
-        e.preventDefault();
-    })
-</script>
 </html>
