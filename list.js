@@ -1,37 +1,43 @@
 var list = [];
 
+function showList()
+{
+    $("#itemlist").empty();
+    for(i in list)
+    {
+        $("#itemlist").append(`<li id="${list[i].id}" class="list-group-item d-flex justify-content-between align-items-start">
+        <input id="t${list[i].id}" class="form-check-input align-item-center justify-content-center"  type="checkbox" ></input>
+        <div class="ms-2 me-auto">
+            <div class="fw-bold">${list[i].title}</div>
+            ${list[i].desc}
+        </div>
+        <a onclick="removeTodo(${list[i].id})" href="javascript:void(0)"><i class="done material-icons">delete</i></a>
+        </li>`)
+    }
+}
 $("#todo").on("submit",(e)=>
 {
     e.preventDefault();
-    console.log($('#itemlist'));
     var inputTitle = $("#todoTitle").val();
     var inputDesc = $("#todoDesc").val();
-    console.log(inputTitle);
-    console.log(inputDesc);
     const obj = {
         title : inputTitle,
-        desc: inputDesc
+        desc: inputDesc,
+        id: list.length +1
     }
     if(inputTitle!=""){
         list.push(obj);
-        $("#itemlist").append(`<li class="list-group-item d-flex justify-content-between align-items-start">
-        <div class="ms-2 me-auto">
-            <div class="fw-bold">${inputTitle}</div>
-            ${inputDesc}
-        </div>
-        <a class="badge material-icons" onclick="doneTodo()" href="javascript:void(0)">check</a>
-        <a class="badge done material-icons" onclick="removeTodo()" href="javascript:void(0)">clear</a>
-        </li>`)
+        showList();
     }
-    
     $('#remTasks').html(list.length);
 })
 
-function doneTodo(){
-    console.log($('ol li a').closest('li'));
-    $('ol li a').closest('li').addClass('completed');
-}
-
-function removeTodo(){
-
+function removeTodo(id){
+    for(l in list){
+        if(list[l].id === id){
+            list.splice(l,1);
+        }
+    }
+    $('#remTasks').html(list.length);
+    showList();
 }
