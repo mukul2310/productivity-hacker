@@ -6,8 +6,8 @@ function showList()
     for(i in list)
     {
         $("#itemlist").append(`<li id="${list[i].id}" class="list-group-item d-flex justify-content-between align-items-start">
-        <input id="t${list[i].id}" class="form-check-input align-item-center justify-content-center"  type="checkbox" ></input>
-        <div class="ms-2 me-auto">
+        <input class="form-check-input align-item-center justify-content-center"  type="checkbox" onclick="doneTodo(t${list[i].id})"></input>
+        <div id="t${list[i].id}" class="ms-2 me-auto">
             <div class="fw-bold">${list[i].title}</div>
             ${list[i].desc}
         </div>
@@ -15,8 +15,7 @@ function showList()
         </li>`)
     }
 }
-$("#todo").on("submit",(e)=>
-{
+$("#todo").on("submit",(e)=>{
     e.preventDefault();
     var inputTitle = $("#todoTitle").val();
     var inputDesc = $("#todoDesc").val();
@@ -40,4 +39,9 @@ function removeTodo(id){
     }
     $('#remTasks').html(list.length);
     showList();
+}
+
+function doneTodo(id){
+    console.log($(id));
+    $(id).toggleClass("completed");
 }
