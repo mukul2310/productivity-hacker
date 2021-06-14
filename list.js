@@ -10,20 +10,16 @@ function remainingTasks(){
     return cnt;
 }
 
-function showList()
+function addList(l)
 {
-    $("#itemlist").empty();
-    for(i in list)
-    {
-        $("#itemlist").append(`<li id="${list[i].id}" class="list-group-item d-flex justify-content-between align-items-start">
-        <input class="form-check-input align-item-center justify-content-center"  type="checkbox" onclick="doneTodo(${list[i].id},t${list[i].id})"></input>
-        <div id="t${list[i].id}" class="ms-2 me-auto">
-            <div class="fw-bold">${list[i].title}</div>
-            ${list[i].desc}
+    $("#itemlist").append(`<li id="${l.id}" class="list-group-item d-flex justify-content-between align-items-start">
+        <input class="form-check-input align-item-center justify-content-center"  type="checkbox" onclick="doneTodo(${l.id},t${l.id})"></input>
+        <div id="t${l.id}" class="ms-2 me-auto">
+            <div class="fw-bold">${l.title}</div>
+            ${l.desc}
         </div>
-        <a onclick="removeTodo(${list[i].id})" href="javascript:void(0)"><i class="done material-icons">delete</i></a>
+        <a onclick="removeTodo(${l.id})" href="javascript:void(0)"><i class="done material-icons">delete</i></a>
         </li>`)
-    }
 }
 $("#todo").on("submit",(e)=>{
     e.preventDefault();
@@ -37,7 +33,7 @@ $("#todo").on("submit",(e)=>{
     }
     if(inputTitle!=""){
         list.push(obj);
-        showList();
+        addList(obj);
     }
     $('#remTasks').html(remainingTasks());
 })
