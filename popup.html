@@ -12,9 +12,10 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script defer src="ajax.js"></script>
     <script defer src="time.js"></script>
+    <script defer src="theme.js"></script>
 </head>
 <body>
-    <div class="container container-fluid">
+    <div class="container container-fluid theme">
         <!-- Quote -->
         <div class="p-1 m-1">
             <span id="quote"> Random Quote </span>
@@ -57,6 +58,10 @@
             <a class="btn btn-outline-primary border-0 p-0 m-0" onclick="startTimer()" href="javascript:void(0)"><i class="material-icons">play_arrow</i></a>
             <a class="btn btn-outline-primary border-0 p-0 m-0" onclick="pauseTimer()" href="javascript:void(0)"><i class="material-icons">pause</i></a>
             <a class="btn btn-outline-primary border-0 p-0 m-0" onclick="stopTimer()" href="javascript:void(0)"><i class="material-icons">stop</i></a>
+        </div>
+        <div>
+            <button class="btn btn-outline-primary border-0 p-0 m-0" id="dark_btn">Dark Mode</button>
+            <button class="btn btn-outline-primary border-0 p-0 m-0" id="light_btn">Light Mode</button>
         </div>
     </div>
 </body>

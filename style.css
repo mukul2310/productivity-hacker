@@ -6,7 +6,11 @@ body
     min-height: 180 px;
     font-size: medium;
 }
-
+.theme
+{
+    background-color: var(--bg-color,#fff);
+    color: var(--text-color,#000);
+}
 .todo{
     width: 200px;
     height: 30pxs;
